@@ -1,0 +1,79 @@
+---
+sidebar_position: 1
+---
+
+# Authentication
+
+How to use your API keys to authenticate requests
+
+:::info
+
+Get your API keys by signing up at https://smartretail.co
+
+:::
+
+Rest API Base Endpoints:
+
+* Test Environment: `https://sm-api-testing.smartretail.co/api/v1/`
+* Production Environment: `https://sm-api.smartretail.co/api/v1/`
+
+## From Backend Servers
+
+<Tabs>
+<TabItem value="HTTP_Header" label="HTTP Header">
+## HTTP Header
+
+:::danger
+
+You must secure your API Key. API Keys in HTTP headers must only be sent from your servers.
+
+:::
+
+Example HTTP request:
+
+```
+GET /api/v1/<api_route>
+Accept: application/json
+API-Key: <your_api_key>
+```
+</TabItem>
+<TabItem value="URL_Query_Parameter" label="URL Query Parameter">
+## URL Query Parameter
+
+:::danger
+
+You must secure your API Key. API Keys in URL Query parameters must only be sent from your servers.
+
+:::
+
+Example HTTP request:
+
+```
+GET /api/v1/<api_route>?API_KEY=<your_api_key>
+Accept: application/json
+```
+
+</TabItem>
+</Tabs>
+
+## From Clients
+
+To authorize a client to perform an API action at some point in the (near) future, issue them with a JWT
+signed with one of the signing key you registered at https://smartretail.co
+
+Example HTTP request:
+
+```
+GET /api/v1/<api_route>
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+```
+
+## Example Responses
+
+| HTTP Status Code | Success | Meaning                                                    |
+|------------------|---------|------------------------------------------------------------|
+| 200              | &#10003;| Your request was fully authenticated                       |
+| 401              | &#10005;| You must provide an API token to access this resource      |
+| 403              | &#10005;| Your API token does not allow you access to this resource  |
+| 429              | &#10005;| Your API token has been used too frequently                |
+
