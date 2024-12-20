@@ -2,33 +2,20 @@
 sidebar_position: 3
 ---
 
-# Track a user journey
+# Redeem a Coupon
 
 API Documentation for this endpoint...
 
 ```
-POST <API_ROOT>/user-journey
+POST <API_ROOT>/get/engage-v2/{session_id}
 ```
 
 ## Request Parameters
 
 | Type       | Name         | Required | Example Value                        |
 |------------|--------------|----------|--------------------------------------|
-| URL Query  | session_id   | Yes      | 83c64b31-5128-40f1-b12d-df09062f9c8f |
-| HTTP Header| Content-Type | Yes      | application/json                     |
-
-## Request Body
-
-```json
-{
-  "events": [
-    {
-      "time": "2024-12-19T08:40:00Z",
-      "action": "scan_qr"
-    }
-  ]
-}
-```
+| URL Path   | session_id   | Yes      | 83c64b31-5128-40f1-b12d-df09062f9c8f |
+| URL Query  | campaign_id  | No       | 2328927                              |
 
 ## Response Status
 
@@ -52,7 +39,7 @@ POST <API_ROOT>/user-journey
 ```json
 {
   "result": "error",
-  "message": "This session_id is not recognized"
+  "message": "This offer has already been redeemed by this session_id."
 }
 ```
 </TabItem>

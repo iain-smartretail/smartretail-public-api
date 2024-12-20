@@ -25,7 +25,7 @@ const config = {
   organizationName: 'iain-smartretail', // Usually your GitHub org/user name.
   projectName: 'smartretail-public-api', // Usually your repo name.
 
-  trailingSlash: true,
+  trailingSlash: false,
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -45,26 +45,11 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
+          routeBasePath: "/"
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/iain-smartretail/smartretail-public-api/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/iain-smartretail/smartretail-public-api/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -84,60 +69,29 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'API',
-          },
-          {to: 'http://smartretail-swagger.s3-website-ap-southeast-1.amazonaws.com/coke-endpoints.html', label: 'Examples', position: 'left'},
-          {
-            href: 'https://github.com/iain-smartretail/smartretail-public-api',
-            label: 'GitHub',
-            position: 'right',
-          },
         ],
       },
       footer: {
         style: 'dark',
         links: [
+          {},
+          {},
+          {},
           {
-            title: 'Docs',
+            title: 'Social',
             items: [
               {
-                label: 'API',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Facebook',
+                href: 'https://www.facebook.com/smartretail.co',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/iain-smartretail/smartretail-public-api',
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/company/smartretail-pte-ltd/',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} SmartRetail.`,
+        copyright: `Copyright © ${new Date().getFullYear()} SmartRetail Holding Ltd.<br/>Copyright © ${new Date().getFullYear()} SmartRetail Group Ltd.\n`,
       },
       prism: {
         theme: prismThemes.github,
