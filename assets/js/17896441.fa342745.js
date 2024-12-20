@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksmartretail_public_api=self.webpackChunksmartretail_public_api||[]).push([[401],{8506:(a,s,e)=>{e.d(s,{A:()=>b});var t=e(7172),i=e(1470),p=e(9365);const b={...t.A,Tabs:i.A,TabItem:p.A}}}]);
